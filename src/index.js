@@ -1,27 +1,27 @@
 import { stdin as input, stdout as output } from 'node:process';
-import readline from 'node:readline';
+import { createInterface } from 'node:readline';
 import { getUsername } from './getUsername.js';
 
 const fileManager = () => {
   const username = getUsername();
   console.log(`Welcome to the File Manager, ${username}!`);
 
-  const rl = readline.createInterface({
+  const readline = createInterface({
     input,
     output,
     prompt: 'Enter your command:\n',
   });
 
-  rl.prompt();
+  readline.prompt();
 
-  rl.on('line', (line) => {
+  readline.on('line', (line) => {
     if (line === '.exit') {
-      rl.close();
-      process.exit(0);
+      readline.close();
     }
-    rl.prompt();
+    readline.prompt();
   }).on('close', () => {
     console.log(`Thank you for using File Manager, ${username}, goodbye!`);
+    process.exit(0);
   })
 };
 
