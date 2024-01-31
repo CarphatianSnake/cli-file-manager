@@ -1,0 +1,15 @@
+{
+  "name": "cli-file-manager",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "Dmytro Markuntovych",
+  "license": "ISC"
+}
